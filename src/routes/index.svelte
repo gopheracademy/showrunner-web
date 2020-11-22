@@ -16,5 +16,5 @@
 </style>
 
 <h1>{homepage.title}</h1>
-<img src="https://content.gophercon.com{homepage.head_image.url}" />
+<img src="/{homepage.head_image.name}" />
 <div>{homepage.hero_text}</div>
