@@ -12,6 +12,6 @@
     </div>
   </div>
   <div class="nav-right">
-    <a class="button outline" href="/login">Log In</a>
+    <a class="button outline" href="/.auth/login/github">Log In</a>
   </div>
 </nav>
