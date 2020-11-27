@@ -158,5 +158,5 @@ class BaseClient {
     }
 }
 
-const client = new Client("production")
+const client = new Client("azure")
 export default client

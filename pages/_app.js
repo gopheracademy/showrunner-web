@@ -40,36 +40,19 @@ Router.events.on("routeChangeError", () => {
 });
 
 export default class MyApp extends App {
-  componentDidMount() {
-    let comment = document.createComment(`
-
-=========================================================
-* * NextJS Argon Dashboard PRO v1.0.0 based on Argon Dashboard PRO React v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/nextjs-argon-dashboard-pro
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-`);
-    document.insertBefore(comment, document.documentElement);
-  }
+  // using getInitialProps forces server-side-render
+  // we don't want that
   /*  static async getInitialProps({ Component, router, ctx }) {
-  
-      let pageProps = {};
-  
-      if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx);
-      }
-  
-      return { pageProps };
-    }
-    */
+   
+       let pageProps = {};
+   
+       if (Component.getInitialProps) {
+         pageProps = await Component.getInitialProps(ctx);
+       }
+   
+       return { pageProps };
+     }
+     */
   render() {
     const { Component, pageProps } = this.props;
 
@@ -82,7 +65,7 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>NextJS Argon Dashboard by Creative Tim</title>
+          <title>GopherCon</title>
         </Head>
         <Layout>
           <Component {...pageProps} />
