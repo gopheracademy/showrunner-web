@@ -106,7 +106,7 @@ class AdminNavbar extends React.Component {
                 <NavItem>
                   <Link href="/auth/pricing">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Pricing</span>
+                      <span className="nav-link-inner--text">Past Events</span>
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -127,7 +127,7 @@ class AdminNavbar extends React.Component {
                 <NavItem>
                   <Link href="/auth/lock">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Lock</span>
+                      <span className="nav-link-inner--text">Login</span>
                     </NavLink>
                   </Link>
                 </NavItem>
