@@ -99,35 +99,35 @@ class AdminNavbar extends React.Component {
                 <NavItem>
                   <Link href="/admin/dashboard">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Dashboard</span>
+                      <span className="nav-link-inner--text">Sponsors</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/auth/pricing">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Pricing</span>
+                      <span className="nav-link-inner--text">Agenda</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/auth/login">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Login</span>
+                      <span className="nav-link-inner--text">Speakers</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/auth/register">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Register</span>
+                      <span className="nav-link-inner--text">Code of Conduct</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/auth/lock">
                     <NavLink href="#pablo">
-                      <span className="nav-link-inner--text">Lock</span>
+                      <span className="nav-link-inner--text">Login</span>
                     </NavLink>
                   </Link>
                 </NavItem>

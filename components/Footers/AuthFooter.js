@@ -32,10 +32,10 @@ class Login extends React.Component {
                   © {new Date().getFullYear()}{" "}
                   <a
                     className="font-weight-bold ml-1"
-                    href="https://www.creative-tim.com?ref=njsadp-auth-footer"
+                    href="https://www.gopheracademy.com"
                     target="_blank"
                   >
-                    Creative Tim
+                    Gopher Academy, LLC
                   </a>
                 </div>
               </Col>
@@ -43,15 +43,15 @@ class Login extends React.Component {
                 <Nav className="nav-footer justify-content-center justify-content-xl-end">
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=njsadp-auth-footer"
+                      href="/2021:"
                       target="_blank"
                     >
-                      Creative Tim
+                      GopherCon 2021
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=njsadp-auth-footer"
+                      href="/pages/about"
                       target="_blank"
                     >
                       About Us
@@ -59,7 +59,7 @@ class Login extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=njsadp-auth-footer"
+                      href="https://blog.gopheracademy.com"
                       target="_blank"
                     >
                       Blog
@@ -67,10 +67,18 @@ class Login extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/license?ref=njsadp-auth-footer"
+                      href="/pages/coc"
                       target="_blank"
                     >
-                      License
+                      Code of Conduct
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      href="/events/"
+                      target="_blank"
+                    >
+                      Past Events
                     </NavLink>
                   </NavItem>
                 </Nav>

@@ -16,7 +16,16 @@
 */
 /*eslint-disable*/
 import React from "react";
-import Link from "next/link";
+
+
+import fs from 'fs'
+import matter from 'gray-matter'
+import hydrate from 'next-mdx-remote/hydrate'
+import renderToString from 'next-mdx-remote/render-to-string'
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
+import Link from 'next/link'
+import path from 'path'
 // reactstrap components
 import {
   Badge,
@@ -33,8 +42,30 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
 import AuthFooter from "components/Footers/AuthFooter.js";
 
+import CustomLink from 'components/CustomLink'
+
+import { Client } from 'components/showrunner.ts';
+import { CONTENT_PATH } from 'utils/mdxUtils'
+
+
+
+// Custom components/renderers to pass to MDX.
+// Since the MDX files aren't loaded by webpack, they have no knowledge of how
+// to handle import statements. Instead, you must include components in scope
+// here.
+const components = {
+  a: CustomLink,
+  // It also works with dynamically-imported components, which is especially
+  // useful for conditionally loading components for certain routes.
+  // See the notes in README.md for more details.
+  Head,
+}
+
 class Index extends React.Component {
+
   render() {
+
+    const { source, frontMatter, edata } = this.props;
     return (
       <>
         <IndexNavbar />
@@ -45,7 +76,7 @@ class Index extends React.Component {
               <Row className="justify-content-center text-center">
                 <Col md="6">
                   <h2 className="display-3 text-white">
-                    A complete React and NextJS solution
+                    {frontMatter.title}
                   </h2>
                   <p className="lead text-white">
                     Argon is a completly new product built on our newest
@@ -552,5 +583,33 @@ class Index extends React.Component {
     );
   }
 }
+
+export const getStaticProps = async ({ params }) => {
+  const contentFilePath = path.join(CONTENT_PATH, `index.mdx`)
+  const source = fs.readFileSync(contentFilePath)
+  const { content, data } = matter(source)
+  var client = new Client("azure");
+
+  const edata = await client.conferences.GetAll();
+  data.edata = edata
+  const mdxSource = await renderToString(content, {
+    components,
+    // Optionally pass remark/rehype plugins
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+    },
+    scope: data,
+  })
+
+  return {
+    props: {
+      source: mdxSource,
+      frontMatter: data,
+      edata: edata,
+    },
+  }
+}
+
 
 export default Index;

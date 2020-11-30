@@ -30,11 +30,10 @@ class IndexHeader extends React.Component {
                 <Col lg="6">
                   <div className="pr-5">
                     <h1 className="display-2 text-white font-weight-bold mb-0">
-                      GopherCon
+                      GopherCon 2021
                     </h1>
                     <h2 className="display-4 text-white font-weight-light">
-                      A beautiful premium dashboard for NextJS, Bootstrap 4,
-                      React and Reactstrap.
+                      A hybrid conference, San Diego and streaming online.
                     </h2>
                     <p className="text-white mt-4">
                       Argon perfectly combines reusable HTML and modular CSS
