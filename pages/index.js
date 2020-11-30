@@ -66,7 +66,6 @@ class Index extends React.Component {
   render() {
 
     const { source, frontMatter, edata } = this.props;
-    console.log(edata)
     return (
       <>
         <IndexNavbar />
@@ -589,7 +588,7 @@ export const getStaticProps = async ({ params }) => {
   const contentFilePath = path.join(CONTENT_PATH, `index.mdx`)
   const source = fs.readFileSync(contentFilePath)
   const { content, data } = matter(source)
-  var client = new Client("dev");
+  var client = new Client("azure");
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
   data.edata = edata
