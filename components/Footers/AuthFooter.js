@@ -73,6 +73,14 @@ class Login extends React.Component {
                       Code of Conduct
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink
+                      href="/events/"
+                      target="_blank"
+                    >
+                      Past Events
+                    </NavLink>
+                  </NavItem>
                 </Nav>
               </Col>
             </Row>
