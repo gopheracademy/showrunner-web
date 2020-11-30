@@ -25,7 +25,6 @@ const components = {
 }
 
 export default function EventPage({ source, frontMatter, edata }) {
-  console.log(edata)
   const content = hydrate(source, { components })
   return (
     <Layout>
