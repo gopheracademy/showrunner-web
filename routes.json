@@ -1,0 +1,20 @@
+{
+    "routes": [
+        {
+            "route": "/login/github",
+            "serve": "/.auth/login/github"
+        },
+        {
+            "route": "/login/twitter",
+            "serve": "/.auth/login/twitter"
+        },
+        {
+            "route": "/login/facebook",
+            "serve": "/.auth/login/twitter"
+        },
+        {
+            "route": "/login/google",
+            "serve": "/.auth/login/google"
+        }
+    ]
+}

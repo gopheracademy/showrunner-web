@@ -125,7 +125,7 @@ class AdminNavbar extends React.Component {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/auth/lock">
+                  <Link href="/login/github">
                     <NavLink href="#pablo">
                       <span className="nav-link-inner--text">Login</span>
                     </NavLink>

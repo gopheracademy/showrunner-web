@@ -589,7 +589,8 @@ export const getStaticProps = async ({ params }) => {
   const contentFilePath = path.join(CONTENT_PATH, `index.mdx`)
   const source = fs.readFileSync(contentFilePath)
   const { content, data } = matter(source)
-  var client = new Client("azure");
+  const encoreEnv = process.env.ENCORE_ENV || "azure"
+  var client = new Client(encoreEnv);
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
