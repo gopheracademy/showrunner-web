@@ -12,6 +12,7 @@ collections:
   - name: "sponsor"
     label: "Sponsors"
     folder: "content/sponsors"
+    identifier_field: "name"
     create: true
     extension: "mdx"
     format: "frontmatter"
