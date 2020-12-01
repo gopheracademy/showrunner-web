@@ -65,7 +65,8 @@ class Index extends React.Component {
 
   render() {
 
-    const { source, frontMatter, edata } = this.props;
+    const { source, frontMatter, edata, sponsors } = this.props;
+    console.log(sponsors)
     return (
       <>
         <IndexNavbar />
@@ -588,10 +589,12 @@ export const getStaticProps = async ({ params }) => {
   const contentFilePath = path.join(CONTENT_PATH, `index.mdx`)
   const source = fs.readFileSync(contentFilePath)
   const { content, data } = matter(source)
-  var client = new Client("azure");
+  const encoreEnv = process.env.ENCORE_ENV || "azure"
+  var client = new Client(encoreEnv);
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
-  data.edata = edata
+
+  const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
   const mdxSource = await renderToString(content, {
     components,
     // Optionally pass remark/rehype plugins
@@ -607,6 +610,7 @@ export const getStaticProps = async ({ params }) => {
       source: mdxSource,
       frontMatter: data,
       edata: edata,
+      sponsors: sponsors,
     },
   }
 }

@@ -3,7 +3,30 @@ backend:
   branch: main
 media_folder: public/img
 public_folder: img
-collections:
+publish_mode: editorial_workflow
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+collections:  
+  - name: sponsors
+    identifier_field: name
+    format: json
+    preview_path: "content/sponsors/{{year}}/{{name}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Sponsor Date", name: "date", widget: "datetime"}
+      - {label: "Logo", name: "logo", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "index"
+        file: "content/index.mdx"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
   - label: "Posts"
     name: "post"
     folder: "content/posts"

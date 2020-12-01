@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "next start",
-    "build": "next build && next export",
+    "build": "next build && next export && cp routes.json out/",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev",
     "compile-sass": "node-sass assets/scss/nextjs-argon-dashboard-pro.scss assets/css/nextjs-argon-dashboard-pro.css",
     "minify-sass": "node-sass assets/scss/nextjs-argon-dashboard-pro.scss assets/css/nextjs-argon-dashboard-pro.min.css --output-style compressed",
