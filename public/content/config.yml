@@ -9,8 +9,8 @@ slug:
   clean_accents: true
   sanitize_replacement: "-"
 collections:  
-  - name: sponsors 
-    name: "sponsors"
+  - name: "sponsors"
+    label: "sponsors"
     folder: "content/sponsors"
     create: true
     extension: "mdx"
