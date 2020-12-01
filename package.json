@@ -23,6 +23,8 @@
     "chart.js": "2.9.3",
     "classnames": "2.2.6",
     "dropzone": "5.7.2",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.3.0",
     "gray-matter": "^4.0.2",
     "list.js": "1.5.0",
     "moment": "2.27.0",

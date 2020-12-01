@@ -16,6 +16,7 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { GraphQLClient } from 'graphql-request';
 
 
 import fs from 'fs'
