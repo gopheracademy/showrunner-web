@@ -10,12 +10,11 @@ slug:
   sanitize_replacement: "-"
 collections:  
   - name: sponsors 
+    name: "sponsors"
+    folder: "content/sponsors"
     create: true
-    label: "Sponsors"
-    folder: "content/sponsors/2021"
-    identifier_field: name
-    format: json
-    preview_path: "content/sponsors/2021/{{name}}"
+    extension: "mdx"
+    format: "frontmatter"
     fields: # The fields for each document, usually in front matter
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Sponsor Date", name: "date", widget: "datetime"}
