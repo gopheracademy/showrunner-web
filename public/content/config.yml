@@ -10,7 +10,7 @@ slug:
   sanitize_replacement: "-"
 collections:  
   - name: "sponsors"
-    label: "sponsors"
+    label: "Sponsors"
     folder: "content/sponsors"
     create: true
     extension: "mdx"
