@@ -97,14 +97,14 @@ class AdminNavbar extends React.Component {
               </div>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <Link href="/admin/dashboard">
-                    <NavLink href="#pablo">
+                  <Link href="/sponsors">
+                    <NavLink href="/sponsors">
                       <span className="nav-link-inner--text">Sponsors</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/auth/pricing">
+                  <Link href="/agenda">
                     <NavLink href="#pablo">
                       <span className="nav-link-inner--text">Agenda</span>
                     </NavLink>
