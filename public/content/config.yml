@@ -21,7 +21,7 @@ collections:
       - {label: "Logo", name: "logo", widget: "image"}
       - {label: "Description", name: "description", widget: "markdown"}
   - label: "Pages"
-    name: "pages"
+    name: "page"
     files:
       - label: "Home Page"
         name: "index"
