@@ -12,10 +12,10 @@ collections:
   - name: sponsors 
     create: true
     label: "Sponsors"
-    folder: "content/sponsors/{{year}}"
+    folder: "content/sponsors/2021"
     identifier_field: name
     format: json
-    preview_path: "content/sponsors/{{year}}/{{name}}"
+    preview_path: "content/sponsors/2021/{{name}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Sponsor Date", name: "date", widget: "datetime"}
