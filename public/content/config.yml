@@ -10,6 +10,7 @@ slug:
   sanitize_replacement: "-"
 collections:  
   - name: sponsors 
+    create: true
     label: "Sponsors"
     folder: "content/sponsors/{{year}}"
     identifier_field: name
