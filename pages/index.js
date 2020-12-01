@@ -590,6 +590,7 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(contentFilePath)
   const { content, data } = matter(source)
   const encoreEnv = process.env.ENCORE_ENV || "azure"
+  console.log("env:", encoreEnv)
   var client = new Client(encoreEnv);
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
