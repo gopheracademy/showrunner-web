@@ -1,6 +1,24 @@
 {
     "routes": [
         {
+            "route": "/profile",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        },
+        {
+            "route": "/admin/*",
+            "allowedRoles": [
+                "administrator"
+            ]
+        },
+        {
+            "route": "/api/admin",
+            "allowedRoles": [
+                "administrator"
+            ]
+        },
+        {
             "route": "/login/github",
             "serve": "/.auth/login/github"
         },
@@ -15,6 +33,23 @@
         {
             "route": "/login/google",
             "serve": "/.auth/login/google"
+        },
+        {
+            "route": "/logout",
+            "serve": "/.auth/logout"
         }
-    ]
+    ],
+    "platformErrorOverrides": [
+        {
+            "errorType": "Unauthenticated",
+            "statusCode": "302",
+            "serve": "/auth/login"
+        }
+    ],
+    "defaultHeaders": {
+        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+    },
+    "mimeTypes": {
+        "custom": "text/html"
+    }
 }
