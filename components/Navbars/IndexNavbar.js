@@ -111,22 +111,22 @@ class AdminNavbar extends React.Component {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/auth/login">
-                    <NavLink href="#pablo">
+                  <Link href="/speakers">
+                    <NavLink href="/speakers">
                       <span className="nav-link-inner--text">Speakers</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/auth/register">
+                  <Link href="/coc">
                     <NavLink href="#pablo">
                       <span className="nav-link-inner--text">Code of Conduct</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/login/github">
-                    <NavLink href="#pablo">
+                  <Link href="/auth/login">
+                    <NavLink href="/auth/login">
                       <span className="nav-link-inner--text">Login</span>
                     </NavLink>
                   </Link>

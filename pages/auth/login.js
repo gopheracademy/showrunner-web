@@ -22,13 +22,6 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col,
@@ -45,7 +38,7 @@ class Login extends React.Component {
       <>
         <AuthHeader
           title="Welcome!"
-          lead="Use these awesome forms to login or create new account in your project for free."
+          lead="Sign in with one of these providers:"
         />
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
@@ -56,124 +49,57 @@ class Login extends React.Component {
                     <small>Sign in with</small>
                   </div>
                   <div className="btn-wrapper text-center">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <span className="btn-inner--icon mr-1">
-                        <img
-                          alt="..."
-                          src={require("assets/img/icons/common/github.svg")}
-                        />
-                      </span>
-                      <span className="btn-inner--text">Github</span>
-                    </Button>
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <span className="btn-inner--icon mr-1">
-                        <img
-                          alt="..."
-                          src={require("assets/img/icons/common/google.svg")}
-                        />
-                      </span>
-                      <span className="btn-inner--text">Google</span>
-                    </Button>
+                    <Container>
+                      <Row>
+                        <Col sm >
+                          <Button
+                            className="btn-neutral btn-icon"
+                            color="default"
+                            href="/.auth/login/google"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fas fa-heart"></i>
+                            </span>
+                            <span className="btn-inner--text">Google</span>
+                          </Button>
+
+                        </Col>
+                        <Col sm >
+                          <Button
+                            className="btn-neutral btn-icon"
+                            color="default"
+                            href="/.auth/login/github"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fas fa-heart"></i>
+                            </span>
+                            <span className="btn-inner--text">Github</span>
+                          </Button>
+
+                        </Col>
+                        <Col sm >
+                          <Button
+                            className="btn-neutral btn-icon"
+                            color="default"
+                            href="/.auth/login/twitter"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fas fa-heart"></i>
+                            </span>
+                            <span className="btn-inner--text">Twitter</span>
+                          </Button>
+                        </Col>
+                      </Row>
+                    </Container>
+
                   </div>
                 </CardHeader>
-                <CardBody className="px-lg-5 py-lg-5">
-                  <div className="text-center text-muted mb-4">
-                    <small>Or sign in with credentials</small>
-                  </div>
-                  <Form role="form">
-                    <FormGroup
-                      className={classnames("mb-3", {
-                        focused: this.state.focusedEmail,
-                      })}
-                    >
-                      <InputGroup className="input-group-merge input-group-alternative">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="ni ni-email-83" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder="Email"
-                          type="email"
-                          onFocus={() => this.setState({ focusedEmail: true })}
-                          onBlur={() => this.setState({ focusedEmail: false })}
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: this.state.focusedPassword,
-                      })}
-                    >
-                      <InputGroup className="input-group-merge input-group-alternative">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="ni ni-lock-circle-open" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder="Password"
-                          type="password"
-                          onFocus={() =>
-                            this.setState({ focusedPassword: true })
-                          }
-                          onBlur={() =>
-                            this.setState({ focusedPassword: false })
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <div className="custom-control custom-control-alternative custom-checkbox">
-                      <input
-                        className="custom-control-input"
-                        id=" customCheckLogin"
-                        type="checkbox"
-                      />
-                      <label
-                        className="custom-control-label"
-                        htmlFor=" customCheckLogin"
-                      >
-                        <span className="text-muted">Remember me</span>
-                      </label>
-                    </div>
-                    <div className="text-center">
-                      <Button className="my-4" color="info" type="button">
-                        Sign in
-                      </Button>
-                    </div>
-                  </Form>
-                </CardBody>
+
               </Card>
-              <Row className="mt-3">
-                <Col xs="6">
-                  <a
-                    className="text-light"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <small>Forgot password?</small>
-                  </a>
-                </Col>
-                <Col className="text-right" xs="6">
-                  <a
-                    className="text-light"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <small>Create new account</small>
-                  </a>
-                </Col>
-              </Row>
+
             </Col>
           </Row>
         </Container>

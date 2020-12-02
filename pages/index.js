@@ -16,17 +16,10 @@
 */
 /*eslint-disable*/
 import React from "react";
-import { GraphQLClient } from 'graphql-request';
+import "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 
-
-import fs from 'fs'
-import matter from 'gray-matter'
-import hydrate from 'next-mdx-remote/hydrate'
-import renderToString from 'next-mdx-remote/render-to-string'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
-import path from 'path'
 // reactstrap components
 import {
   Badge,
@@ -46,7 +39,6 @@ import AuthFooter from "components/Footers/AuthFooter.js";
 import CustomLink from 'components/CustomLink'
 
 import { Client } from 'components/showrunner.ts';
-import { CONTENT_PATH } from 'utils/mdxUtils'
 
 
 
@@ -66,8 +58,7 @@ class Index extends React.Component {
 
   render() {
 
-    const { source, frontMatter, edata, sponsors } = this.props;
-    console.log(sponsors)
+    const { edata, sponsors } = this.props;
     return (
       <>
         <IndexNavbar />
@@ -78,7 +69,6 @@ class Index extends React.Component {
               <Row className="justify-content-center text-center">
                 <Col md="6">
                   <h2 className="display-3 text-white">
-                    {frontMatter.title}
                   </h2>
                   <p className="lead text-white">
                     Argon is a completly new product built on our newest
@@ -587,9 +577,6 @@ class Index extends React.Component {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const contentFilePath = path.join(CONTENT_PATH, `index.mdx`)
-  const source = fs.readFileSync(contentFilePath)
-  const { content, data } = matter(source)
   const encoreEnv = process.env.ENCORE_ENV || "azure"
   console.log("env:", encoreEnv)
   var client = new Client(encoreEnv);
@@ -597,20 +584,9 @@ export const getStaticProps = async ({ params }) => {
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
   const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
-  const mdxSource = await renderToString(content, {
-    components,
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
-    scope: data,
-  })
 
   return {
     props: {
-      source: mdxSource,
-      frontMatter: data,
       edata: edata,
       sponsors: sponsors,
     },
