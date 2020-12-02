@@ -18,6 +18,6 @@ module.exports = async function (context, req) {
 
 function generateAccessToken(userobject) {
     // expires after half and hour (1800 seconds = 30 minutes)
-    return jwt.sign(userobject, "supersecretkeythatisreallylong", { expiresIn: '1800s' });
+    return jwt.sign(userobject, process.env.JWT_KEY, { expiresIn: '1800s' });
 
 }
