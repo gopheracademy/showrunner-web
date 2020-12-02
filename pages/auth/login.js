@@ -56,7 +56,6 @@ class Login extends React.Component {
                             className="btn-neutral btn-icon"
                             color="default"
                             href="/.auth/login/google"
-                            onClick={(e) => e.preventDefault()}
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="fas fa-heart"></i>
@@ -70,7 +69,6 @@ class Login extends React.Component {
                             className="btn-neutral btn-icon"
                             color="default"
                             href="/.auth/login/github"
-                            onClick={(e) => e.preventDefault()}
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="fas fa-heart"></i>
@@ -84,7 +82,6 @@ class Login extends React.Component {
                             className="btn-neutral btn-icon"
                             color="default"
                             href="/.auth/login/twitter"
-                            onClick={(e) => e.preventDefault()}
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="fas fa-heart"></i>
