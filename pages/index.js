@@ -37,6 +37,7 @@ import AuthFooter from "../components/Footers/AuthFooter";
 
 import CustomLink from '../components/CustomLink'
 
+import SponsorList from '../components/SponsorList'
 import Client from '../components/showrunner.ts';
 
 
@@ -63,7 +64,9 @@ class Index extends React.Component {
         <IndexNavbar />
         <div className="main-content">
           <IndexHeader />
+          <SponsorList sponsors={sponsors} ></SponsorList>
         </div>
+
         <AuthFooter />
       </>
     );
@@ -77,12 +80,12 @@ export const getStaticProps = async ({ params }) => {
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
-  // const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
-
+  const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
+  console.log(sponsors.Sponsors)
   return {
     props: {
       edata: edata,
-      //    sponsors: sponsors,
+      sponsors: sponsors.Sponsors,
     },
   }
 }
