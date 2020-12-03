@@ -38,7 +38,7 @@ import AuthFooter from "components/Footers/AuthFooter.js";
 
 import CustomLink from 'components/CustomLink'
 
-import { Client } from 'components/showrunner.ts';
+import Client from 'components/showrunner.ts';
 
 
 
