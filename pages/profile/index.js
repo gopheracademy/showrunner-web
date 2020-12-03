@@ -14,584 +14,513 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-/*eslint-disable*/
 import React from "react";
-import "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 
-import Head from 'next/head'
-import Link from 'next/link'
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
+  CardHeader,
   CardBody,
+  CardImg,
+  CardTitle,
+  FormGroup,
+  Form,
+  Input,
+  ListGroupItem,
+  ListGroup,
+  Progress,
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
+// layout for this page
+import Admin from "layouts/Admin.js";
 // core components
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
-import AuthFooter from "components/Footers/AuthFooter.js";
+import ProfileHeader from "components/Headers/ProfileHeader.js";
 
-import CustomLink from 'components/CustomLink'
-
-import Client from 'components/showrunner.ts';
-
-
-
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
-const components = {
-  a: CustomLink,
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
-  Head,
-}
-
-class Index extends React.Component {
-
+class Profile extends React.Component {
   render() {
-
-    const { edata, sponsors } = this.props;
     return (
       <>
-        <IndexNavbar />
-        <div className="main-content">
-          <IndexHeader />
-          <section className="py-6 pb-9 bg-default">
-            <Container fluid>
-              <Row className="justify-content-center text-center">
-                <Col md="6">
-                  <h2 className="display-3 text-white">PROFILE
-                  </h2>
-                  <p className="lead text-white">
-                    Argon is a completly new product built on our newest
-                    re-built from scratch framework structure that is meant to
-                    make our products more intuitive, more adaptive and,
-                    needless to say, so much easier to customize. Let Argon
-                    amaze you with its cool features and build tools and get
-                    your project to a whole new level.
-                  </p>
+        <ProfileHeader />
+        <Container className="mt--6" fluid>
+          <Row>
+            <Col className="order-xl-2" xl="4">
+              <Card className="card-profile">
+                <CardImg
+                  alt="..."
+                  src={require("assets/img/theme/img-1-1000x600.jpg")}
+                  top
+                />
+                <Row className="justify-content-center">
+                  <Col className="order-lg-2" lg="3">
+                    <div className="card-profile-image">
+                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img
+                          alt="..."
+                          className="rounded-circle"
+                          src={require("assets/img/theme/team-4.jpg")}
+                        />
+                      </a>
+                    </div>
+                  </Col>
+                </Row>
+                <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                  <div className="d-flex justify-content-between">
+                    <Button
+                      className="mr-4"
+                      color="info"
+                      href="#pablo"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Connect
+                    </Button>
+                    <Button
+                      className="float-right"
+                      color="default"
+                      href="#pablo"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Message
+                    </Button>
+                  </div>
+                </CardHeader>
+                <CardBody className="pt-0">
+                  <Row>
+                    <div className="col">
+                      <div className="card-profile-stats d-flex justify-content-center">
+                        <div>
+                          <span className="heading">22</span>
+                          <span className="description">Friends</span>
+                        </div>
+                        <div>
+                          <span className="heading">10</span>
+                          <span className="description">Photos</span>
+                        </div>
+                        <div>
+                          <span className="heading">89</span>
+                          <span className="description">Comments</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Row>
+                  <div className="text-center">
+                    <h5 className="h3">
+                      Jessica Jones
+                      <span className="font-weight-light">, 27</span>
+                    </h5>
+                    <div className="h5 font-weight-300">
+                      <i className="ni location_pin mr-2" />
+                      Bucharest, Romania
+                    </div>
+                    <div className="h5 mt-4">
+                      <i className="ni business_briefcase-24 mr-2" />
+                      Solution Manager - Creative Tim Officer
+                    </div>
+                    <div>
+                      <i className="ni education_hat mr-2" />
+                      University of Computer Science
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <h5 className="h3 mb-0">Progress track</h5>
+                </CardHeader>
+
+                <CardBody>
+                  <ListGroup className="list my--3" flush>
+                    <ListGroupItem className="px-0">
+                      <Row className="align-items-center">
+                        <Col className="col-auto">
+                          <a
+                            className="avatar rounded-circle"
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img
+                              alt="..."
+                              src={require("assets/img/theme/bootstrap.jpg")}
+                            />
+                          </a>
+                        </Col>
+                        <div className="col">
+                          <h5>Argon Design System</h5>
+                          <Progress
+                            className="progress-xs mb-0"
+                            max="100"
+                            value="60"
+                            color="warning"
+                          />
+                        </div>
+                      </Row>
+                    </ListGroupItem>
+                    <ListGroupItem className="px-0">
+                      <Row className="align-items-center">
+                        <Col className="col-auto">
+                          <a
+                            className="avatar rounded-circle"
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img
+                              alt="..."
+                              src={require("assets/img/theme/angular.jpg")}
+                            />
+                          </a>
+                        </Col>
+                        <div className="col">
+                          <h5>Angular Now UI Kit PRO</h5>
+                          <Progress
+                            className="progress-xs mb-0"
+                            max="100"
+                            value="100"
+                            color="success"
+                          />
+                        </div>
+                      </Row>
+                    </ListGroupItem>
+                    <ListGroupItem className="px-0">
+                      <Row className="align-items-center">
+                        <Col className="col-auto">
+                          <a
+                            className="avatar rounded-circle"
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img
+                              alt="..."
+                              src={require("assets/img/theme/sketch.jpg")}
+                            />
+                          </a>
+                        </Col>
+                        <div className="col">
+                          <h5>Black Dashboard</h5>
+                          <Progress
+                            className="progress-xs mb-0"
+                            max="100"
+                            value="72"
+                            color="danger"
+                          />
+                        </div>
+                      </Row>
+                    </ListGroupItem>
+                    <ListGroupItem className="px-0">
+                      <Row className="align-items-center">
+                        <Col className="col-auto">
+                          <a
+                            className="avatar rounded-circle"
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img
+                              alt="..."
+                              src={require("assets/img/theme/react.jpg")}
+                            />
+                          </a>
+                        </Col>
+                        <div className="col">
+                          <h5>React Material Dashboard</h5>
+                          <Progress
+                            className="progress-xs mb-0"
+                            max="100"
+                            value="90"
+                            color="info"
+                          />
+                        </div>
+                      </Row>
+                    </ListGroupItem>
+                    <ListGroupItem className="px-0">
+                      <Row className="align-items-center">
+                        <Col className="col-auto">
+                          <a
+                            className="avatar rounded-circle"
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img
+                              alt="..."
+                              src={require("assets/img/theme/vue.jpg")}
+                            />
+                          </a>
+                        </Col>
+                        <div className="col">
+                          <h5>Vue Paper UI Kit PRO</h5>
+                          <Progress
+                            className="progress-xs mb-0"
+                            max="100"
+                            value="100"
+                            color="success"
+                          />
+                        </div>
+                      </Row>
+                    </ListGroupItem>
+                  </ListGroup>
+                </CardBody>
+              </Card>
+            </Col>
+            <Col className="order-xl-1" xl="8">
+              <Row>
+                <Col lg="6">
+                  <Card className="bg-gradient-success border-0">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle
+                            className="text-uppercase text-muted mb-0 text-white"
+                            tag="h5"
+                          >
+                            Total traffic
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">
+                            350,897
+                          </span>
+                        </div>
+                        <Col className="col-auto">
+                          <div className="icon icon-shape bg-white text-dark rounded-circle shadow">
+                            <i className="ni ni-active-40" />
+                          </div>
+                        </Col>
+                      </Row>
+                      <p className="mt-3 mb-0 text-sm">
+                        <span className="text-white mr-2">
+                          <i className="fa fa-arrow-up" />
+                          3.48%
+                        </span>
+                        <span className="text-nowrap text-light">
+                          Since last month
+                        </span>
+                      </p>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col lg="6">
+                  <Card className="bg-gradient-danger border-0" tag="h5">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle className="text-uppercase text-muted mb-0 text-white">
+                            Performance
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">
+                            49,65%
+                          </span>
+                        </div>
+                        <Col className="col-auto">
+                          <div className="icon icon-shape bg-white text-dark rounded-circle shadow">
+                            <i className="ni ni-spaceship" />
+                          </div>
+                        </Col>
+                      </Row>
+                      <p className="mt-3 mb-0 text-sm">
+                        <span className="text-white mr-2">
+                          <i className="fa fa-arrow-up" />
+                          3.48%
+                        </span>
+                        <span className="text-nowrap text-light">
+                          Since last month
+                        </span>
+                      </p>
+                    </CardBody>
+                  </Card>
                 </Col>
               </Row>
-            </Container>
-          </section>
-          <section className="section section-lg pt-lg-0 mt--7">
-            <Container>
-              <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape bg-gradient-info text-white rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
-                          </div>
-                          <h4 className="h3 text-info text-uppercase">
-                            Based on React, NextJS and Reactstrap
-                          </h4>
-                          <p className="description mt-3">
-                            Argon is built on top of the most popular open
-                            source toolkit for developing with HTML, CSS, and
-                            JS.
-                          </p>
-                          <div>
-                            <Badge color="info" pill>
-                              react
-                            </Badge>
-                            <Badge color="info" pill>
-                              reactstrap
-                            </Badge>
-                            <Badge color="info" pill>
-                              dashboard
-                            </Badge>
-                            <Badge color="info" pill>
-                              template
-                            </Badge>
-                          </div>
-                        </CardBody>
-                      </Card>
+              <Card>
+                <CardHeader>
+                  <Row className="align-items-center">
+                    <Col xs="8">
+                      <h3 className="mb-0">Edit profile</h3>
                     </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape bg-gradient-success text-white rounded-circle mb-4">
-                            <i className="ni ni-istanbul" />
-                          </div>
-                          <h4 className="h3 text-success text-uppercase">
-                            Integrated build tools
-                          </h4>
-                          <p className="description mt-3">
-                            Use Argons's included npm scripts to compile source
-                            code, scss and more with just a few simple commands.
-                          </p>
-                          <div>
-                            <Badge color="success" pill>
-                              npm
-                            </Badge>
-                            <Badge color="success" pill>
-                              build tools
-                            </Badge>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape bg-gradient-warning text-white rounded-circle mb-4">
-                            <i className="ni ni-planet" />
-                          </div>
-                          <h4 className="h3 text-warning text-uppercase">
-                            Full Sass support
-                          </h4>
-                          <p className="description mt-3">
-                            Argon makes customization easier than ever before.
-                            You get all the tools to make your website building
-                            process a breeze.
-                          </p>
-                          <div>
-                            <Badge color="warning" pill>
-                              sass
-                            </Badge>
-                            <Badge color="warning" pill>
-                              design
-                            </Badge>
-                            <Badge color="warning" pill>
-                              customize
-                            </Badge>
-                          </div>
-                        </CardBody>
-                      </Card>
+                    <Col className="text-right" xs="4">
+                      <Button
+                        color="primary"
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                      >
+                        Settings
+                      </Button>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="py-6">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid"
-                    src={require("assets/img/theme/landing-1.png")}
-                  />
-                </Col>
-                <Col className="order-md-1" md="6">
-                  <div className="pr-md-5">
-                    <h1>Awesome features</h1>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
+                </CardHeader>
+                <CardBody>
+                  <Form>
+                    <h6 className="heading-small text-muted mb-4">
+                      User information
+                    </h6>
+                    <div className="pl-lg-4">
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-username"
                             >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h4 className="mb-0">
-                              Carefully crafted components
-                            </h4>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
+                              Username
+                            </label>
+                            <Input
+                              defaultValue="lucky.jesse"
+                              id="input-username"
+                              placeholder="Username"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-email"
                             >
-                              <i className="ni ni-html5" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h4 className="mb-0">Amazing page examples</h4>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
+                              Email address
+                            </label>
+                            <Input
+                              id="input-email"
+                              placeholder="jesse@example.com"
+                              type="email"
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-first-name"
                             >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h4 className="mb-0">
-                              Super friendly support team
-                            </h4>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="py-6">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid"
-                    src={require("assets/img/theme/landing-2.png")}
-                  />
-                </Col>
-                <Col md="6">
-                  <div className="pr-md-5">
-                    <h1>Example pages</h1>
-                    <p>
-                      If you want to get inspiration or just show something
-                      directly to your clients, you can jump start your
-                      development with our pre-built example pages.
-                    </p>
-                    <Link href="/admin/profile">
-                      <a className="font-weight-bold text-warning mt-5">
-                        Explore pages
-                      </a>
-                    </Link>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="py-6">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid"
-                    src={require("assets/img/theme/landing-3.png")}
-                  />
-                </Col>
-                <Col className="order-md-1" md="6">
-                  <div className="pr-md-5">
-                    <h1>Lovable widgets and cards</h1>
-                    <p>
-                      We love cards and everybody on the web seems to. We have
-                      gone above and beyond with options for you to organise
-                      your information. From cards designed for content, to
-                      pricing cards or user profiles, you will have many options
-                      to choose from.
-                    </p>
-                    <Link href="/admin/widgets">
-                      <a className="font-weight-bold text-info mt-5">
-                        Explore widgets
-                      </a>
-                    </Link>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="py-7 section-nucleo-icons bg-white overflow-hidden">
-            <Container>
-              <Row className="justify-content-center">
-                <Col className="text-center" lg="8">
-                  <h2 className="display-3">Nucleo Icons</h2>
-                  <p className="lead">
-                    The official package contains over 21.000 icons which are
-                    looking great in combination with Argon Design System. Make
-                    sure you check all of them and use those that you like the
-                    most.
-                  </p>
-                  <div className="btn-wrapper">
-                    <Button
-                      color="info"
-                      href="https://www.creative-tim.com/learning-lab/nextjs/icons/argon-dashboard?ref=njsadp-index-page"
-                      target="_blank"
-                    >
-                      View demo icons
-                    </Button>
-                    <Button
-                      className="mt-3 mt-md-0"
-                      color="default"
-                      href="https://nucleoapp.com/?ref=1712"
-                      target="_blank"
-                    >
-                      View all icons
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-              <div className="blur--hover">
-                <a
-                  href="https://www.creative-tim.com/learning-lab/nextjs/icons/argon-dashboard?ref=njsadp-index-page"
-                  target="_blank"
-                >
-                  <div className="icons-container blur-item mt-5">
-                    <i className="icon ni ni-diamond" />
+                              First name
+                            </label>
+                            <Input
+                              defaultValue="Lucky"
+                              id="input-first-name"
+                              placeholder="First name"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-last-name"
+                            >
+                              Last name
+                            </label>
+                            <Input
+                              defaultValue="Jesse"
+                              id="input-last-name"
+                              placeholder="Last name"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </div>
+                    <hr className="my-4" />
 
-                    <i className="icon icon-sm ni ni-album-2" />
-                    <i className="icon icon-sm ni ni-app" />
-                    <i className="icon icon-sm ni ni-atom" />
+                    <h6 className="heading-small text-muted mb-4">
+                      Contact information
+                    </h6>
+                    <div className="pl-lg-4">
+                      <Row>
+                        <Col md="12">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-address"
+                            >
+                              Address
+                            </label>
+                            <Input
+                              defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                              id="input-address"
+                              placeholder="Home Address"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg="4">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-city"
+                            >
+                              City
+                            </label>
+                            <Input
+                              defaultValue="New York"
+                              id="input-city"
+                              placeholder="City"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="4">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-country"
+                            >
+                              Country
+                            </label>
+                            <Input
+                              defaultValue="United States"
+                              id="input-country"
+                              placeholder="Country"
+                              type="text"
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="4">
+                          <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="input-country"
+                            >
+                              Postal code
+                            </label>
+                            <Input
+                              id="input-postal-code"
+                              placeholder="Postal code"
+                              type="number"
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </div>
+                    <hr className="my-4" />
 
-                    <i className="icon ni ni-bag-17" />
-                    <i className="icon ni ni-bell-55" />
-                    <i className="icon ni ni-credit-card" />
-
-                    <i className="icon icon-sm ni ni-briefcase-24" />
-                    <i className="icon icon-sm ni ni-building" />
-                    <i className="icon icon-sm ni ni-button-play" />
-
-                    <i className="icon ni ni-calendar-grid-58" />
-                    <i className="icon ni ni-camera-compact" />
-                    <i className="icon ni ni-chart-bar-32" />
-                  </div>
-                  <span className="blur-hidden h5 text-success">
-                    Eplore all the 21.000+ Nucleo Icons
-                  </span>
-                </a>
-              </div>
-            </Container>
-          </section>
-          <section className="py-7">
-            <Container>
-              <Row className="row-grid justify-content-center">
-                <Col className="text-center" lg="8">
-                  <h2 className="display-3">
-                    Do you love this awesome{" "}
-                    <span className="text-success">
-                      Dashboard for NextJS, Bootstrap 4, React and Reactstrap?
-                    </span>
-                  </h2>
-                  <p className="lead">
-                    Cause if you do, it can be yours now. Hit the button below
-                    to navigate to get the free version or purchase a license
-                    for your next project. Build a new web app or give an old
-                    Bootstrap project a new look!
-                  </p>
-                  <div className="btn-wrapper">
-                    <Button
-                      className="btn-neutral mb-3 mb-sm-0"
-                      color="default"
-                      href="https://www.creative-tim.com/product/nextjs-argon-dashboard?ref=njsadp-index-page"
-                      target="_blank"
-                    >
-                      <span className="btn-inner--text">Get FREE version</span>
-                    </Button>
-                    <Button
-                      className="btn-icon mb-3 mb-sm-0"
-                      color="info"
-                      href="https://www.creative-tim.com/product/nextjs-argon-dashboard-pro?ref=njsadp-index-page"
-                      target="_blank"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="ni ni-basket" />
-                      </span>
-                      <span className="btn-inner--text">Purchase now</span>
-                    </Button>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="display-4 mb-5 mt-5">
-                      Available on these technologies
-                    </h4>
-                    <Row className="justify-content-center">
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=njsadp-index-page"
-                          id="tooltip170669606"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle shadow shadow-lg--hover"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/bootstrap.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip170669606"
-                        >
-                          Bootstrap 4 - Most popular front-end component library
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/nextjs-argon-dashboard-pro?ref=njsadp-index-page"
-                          id="tooltip374813715"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip374813715"
-                        >
-                          React - A JavaScript library for building user
-                          interfaces
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/argon-dashboard-pro-nodejs?ref=njsadp-index-page"
-                          id="tooltip374813716"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nodejs-logo.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip374813716"
-                        >
-                          Node.js - a JavaScript runtime built on Chrome's V8
-                          JavaScript engine
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/argon-dashboard-pro-laravel?ref=njsadp-index-page"
-                          id="tooltip374813717"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/laravel_logo.png"
-                            style={{ backgroundColor: "white" }}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip374813717"
-                        >
-                          Laravel - The PHP Framework For Web Artisans
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/vue-argon-dashboard-pro?ref=njsadp-index-page"
-                          id="tooltip616015001"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip616015001"
-                        >
-                          Vue.js - The progressive javascript framework
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/argon-dashboard-pro-angular?ref=njsadp-index-page"
-                          id="tooltip211254026"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip211254026"
-                        >
-                          Angular - One framework. Mobile & desktop
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.creative-tim.com/product/nextjs-argon-dashboard-pro?ref=njsadp-index-page"
-                          id="tooltip82987604"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/sketch.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip delay={0} target="tooltip82987604">
-                          Sketch - Digital design toolkit
-                        </UncontrolledTooltip>
-                      </Col>
-                      <Col className="my-2" md="2" xs="3">
-                        <a
-                          href="https://www.adobe.com/products/photoshop.html?ref=creative-tim"
-                          id="tooltip731835410"
-                          target="_blank"
-                        >
-                          <img
-                            alt="..."
-                            className="img-fluid rounded-circle opacity-3"
-                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/ps.jpg"
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip731835410"
-                        >
-                          Adobe Photoshop - Software for digital images
-                          manipulation
-                        </UncontrolledTooltip>
-                      </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-        </div>
-        <AuthFooter />
+                    <h6 className="heading-small text-muted mb-4">About me</h6>
+                    <div className="pl-lg-4">
+                      <FormGroup>
+                        <label className="form-control-label">About Me</label>
+                        <Input
+                          placeholder="A few words about you ..."
+                          rows="4"
+                          type="textarea"
+                          defaultValue="A beautiful premium dashboard for Bootstrap 4."
+                        />
+                      </FormGroup>
+                    </div>
+                  </Form>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </>
     );
   }
 }
 
-export const getStaticProps = async ({ params }) => {
-  const encoreEnv = process.env.ENCORE_ENV || "azure"
-  console.log("env:", encoreEnv)
-  var client = new Client(encoreEnv);
+Profile.layout = Admin;
 
-  const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
-
-  // const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
-
-  return {
-    props: {
-      edata: edata,
-      //    sponsors: sponsors,
-    },
-  }
-}
-
-
-export default Index;
+export default Profile;
