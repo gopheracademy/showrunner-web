@@ -16,6 +16,7 @@
 */
 /*eslint-disable*/
 import React from "react";
+import "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 
 import Head from 'next/head'
 import Link from 'next/link'
@@ -31,13 +32,13 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 // core components
-import IndexNavbar from "../components/Navbars/IndexNavbar";
-import IndexHeader from "../components/Headers/IndexHeader";
-import AuthFooter from "../components/Footers/AuthFooter";
+import IndexNavbar from "components/Navbars/IndexNavbar.js";
+import IndexHeader from "components/Headers/IndexHeader.js";
+import AuthFooter from "components/Footers/AuthFooter.js";
 
-import CustomLink from '../components/CustomLink'
+import CustomLink from 'components/CustomLink'
 
-import Client from '../components/showrunner.ts';
+import Client from 'components/showrunner.ts';
 
 
 

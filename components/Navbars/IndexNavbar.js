@@ -105,7 +105,7 @@ class AdminNavbar extends React.Component {
                 </NavItem>
                 <NavItem>
                   <Link href="/agenda">
-                    <NavLink href="#pablo">
+                    <NavLink href="/agenda">
                       <span className="nav-link-inner--text">Agenda</span>
                     </NavLink>
                   </Link>
@@ -119,7 +119,7 @@ class AdminNavbar extends React.Component {
                 </NavItem>
                 <NavItem>
                   <Link href="/coc">
-                    <NavLink href="#pablo">
+                    <NavLink href="/coc">
                       <span className="nav-link-inner--text">Code of Conduct</span>
                     </NavLink>
                   </Link>

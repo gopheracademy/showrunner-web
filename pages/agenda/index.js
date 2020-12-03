@@ -31,13 +31,13 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 // core components
-import IndexNavbar from "../components/Navbars/IndexNavbar";
-import IndexHeader from "../components/Headers/IndexHeader";
-import AuthFooter from "../components/Footers/AuthFooter";
+import IndexNavbar from "../../components/Navbars/IndexNavbar";
+import IndexHeader from "../../components/Headers/IndexHeader";
+import AuthFooter from "../../components/Footers/AuthFooter";
 
-import CustomLink from '../components/CustomLink'
+import CustomLink from '../../components/CustomLink'
 
-import Client from '../components/showrunner.ts';
+import Client from '../../components/showrunner.ts';
 
 
 
