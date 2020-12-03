@@ -86,7 +86,7 @@ class Admin extends React.Component {
           sidenavOpen={this.state.sidenavOpen}
           logo={{
             innerLink: "/",
-            imgSrc: require("assets/img/brand/nextjs_argon_black.png"),
+            imgSrc: require("assets/img/brand/default-monochrome-black.svg"),
             imgAlt: "...",
           }}
         />
