@@ -579,16 +579,16 @@ class Index extends React.Component {
 export const getStaticProps = async ({ params }) => {
   const encoreEnv = process.env.ENCORE_ENV || "azure"
   console.log("env:", encoreEnv)
-  var client = new Client(encoreEnv, "getTokenHere");
+  var client = new Client(encoreEnv);
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
-  const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
+  // const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
 
   return {
     props: {
       edata: edata,
-      sponsors: sponsors,
+      //    sponsors: sponsors,
     },
   }
 }

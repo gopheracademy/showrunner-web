@@ -583,12 +583,12 @@ export const getStaticProps = async ({ params }) => {
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
-  const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
+  // const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
 
   return {
     props: {
       edata: edata,
-      sponsors: sponsors,
+      //    sponsors: sponsors,
     },
   }
 }
