@@ -61,9 +61,7 @@ export namespace conferences {
     /**
      * ContactRole defines the type that encapsulates the different contact roles
      */
-    export interface ContactRole {
-        number
-    }
+    export type ContactRole = number
 
     /**
      * Event is a brand like GopherCon
@@ -172,10 +170,8 @@ export namespace conferences {
     /**
      * SponsorshipLevel defines the type that encapsulates the different sponsorship levels
      */
-    export interface SponsorshipLevel 
-    {
-        number
-    }
+    export type SponsorshipLevel = number
+    
 
     /**
      * UpdateSponsorContactParams defines the inputs used by the UpdateSponsorContactParams API method
