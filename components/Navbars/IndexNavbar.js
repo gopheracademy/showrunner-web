@@ -46,7 +46,7 @@ class AdminNavbar extends React.Component {
                 <NavbarBrand href="#pablo">
                   <img
                     alt="..."
-                    src={require("assets/img/brand/nextjs_argon_white.png")}
+                    src={require("assets/img/brand/default-monochrome-white.svg")}
                   />
                 </NavbarBrand>
               </span>
@@ -74,7 +74,7 @@ class AdminNavbar extends React.Component {
                     <Link href="/admin/dashboard">
                       <img
                         alt="..."
-                        src={require("assets/img/brand/blue.png")}
+                        src={require("assets/img/brand/default-monochrome-black.svg")}
                       />
                     </Link>
                   </Col>
