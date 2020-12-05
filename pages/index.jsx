@@ -17,8 +17,8 @@
 /*eslint-disable*/
 import React from "react";
 
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
 // reactstrap components
 import {
   Badge,
@@ -31,16 +31,14 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 // core components
-import IndexNavbar from "../components/Navbars/IndexNavbar";
-import IndexHeader from "../components/Headers/IndexHeader";
-import AuthFooter from "../components/Footers/AuthFooter";
 
-import CustomLink from '../components/CustomLink'
+import CustomLink from "../components/CustomLink";
 
-import SponsorList from '../components/SponsorList'
-import Client from '../components/showrunner.ts';
+import SponsorList from "../components/SponsorList";
+import Client from "../components/showrunner.ts";
 
-
+import Layout from "../layouts/Layout";
+import { useFetchUser } from "../lib/user";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -52,43 +50,51 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Head,
-}
+};
 
-class Index extends React.Component {
+export default function Home({ edata, sponsors }) {
+  const { user, loading } = useFetchUser();
 
-  render() {
+  return (
+    <Layout user={user} loading={loading}>
+      {loading && <p>Loading login info...</p>}
 
-    const { edata, sponsors } = this.props;
-    return (
-      <>
-        <IndexNavbar />
-        <div className="main-content">
-          <IndexHeader />
-          <SponsorList sponsors={sponsors} ></SponsorList>
-        </div>
+      {!loading && !user && (
+        <>
+          <p>
+            To test the login click in <i>Login</i>
+          </p>
+          <p>
+            Once you have logged in you should be able to see the sponsor list
+            below.
+          </p>
+        </>
+      )}
 
-        <AuthFooter />
-      </>
-    );
-  }
+      {!loading && user && (
+        <>
+          <SponsorList sponsors={sponsors}></SponsorList>
+        </>
+      )}
+    </Layout>
+  );
 }
 
 export const getStaticProps = async ({ params }) => {
-  const encoreEnv = process.env.ENCORE_ENV || "azure"
-  console.log("env:", encoreEnv)
+  const encoreEnv = process.env.ENCORE_ENV || "azure";
+  console.log("env:", encoreEnv);
   var client = new Client(encoreEnv);
 
   const edata = await client.conferences.GetCurrentByEvent({ EventID: 1 });
 
-  const sponsors = await client.conferences.GetConferenceSponsors({ ConferenceID: 1 });
-  console.log(sponsors.Sponsors)
+  const sponsors = await client.conferences.GetConferenceSponsors({
+    ConferenceID: 1,
+  });
+  console.log(sponsors.Sponsors);
   return {
     props: {
       edata: edata,
       sponsors: sponsors.Sponsors,
     },
-  }
-}
-
-
-export default Index;
+  };
+};

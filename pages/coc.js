@@ -39,6 +39,7 @@ import CustomLink from '../components/CustomLink'
 
 import Client from '../components/showrunner.ts';
 
+import withAuth from '../components/with-auth';
 
 
 // Custom components/renderers to pass to MDX.
@@ -86,6 +87,7 @@ export const getStaticProps = async ({ params }) => {
     },
   }
 }
+
 
 
 export default Index;

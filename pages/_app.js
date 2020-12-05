@@ -21,6 +21,7 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 // core styles
 import "assets/scss/nextjs-argon-dashboard-pro.scss?v1.0.0";
+import Layout from "layouts/Layout";
 /*
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -56,7 +57,6 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    const Layout = Component.layout || (({ children }) => <>{children}</>);
 
     return (
       <React.Fragment>
@@ -67,9 +67,7 @@ export default class MyApp extends App {
           />
           <title>GopherCon</title>
         </Head>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </React.Fragment>
     );
   }
