@@ -33,7 +33,7 @@ import {
 // core components
 
 import CustomLink from "../components/CustomLink";
-
+import IndexHeader from "../components/Headers/IndexHeader";
 import SponsorList from "../components/SponsorList";
 import Client from "../components/showrunner.ts";
 
@@ -82,7 +82,7 @@ export default function Home({ edata, sponsors }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const encoreEnv = process.env.ENCORE_ENV || "azure";
+  const encoreEnv = process.env.ENCORE_ENV || "dev";
   console.log("env:", encoreEnv);
   var client = new Client(encoreEnv);
 
