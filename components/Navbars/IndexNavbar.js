@@ -46,7 +46,7 @@ class AdminNavbar extends React.Component {
                 <NavbarBrand href="#pablo">
                   <img
                     alt="..."
-                    src={require("assets/img/brand/default-monochrome-white.svg")}
+                    src={require("assets/img/brand/nextjs_argon_white.png")}
                   />
                 </NavbarBrand>
               </span>
@@ -74,7 +74,7 @@ class AdminNavbar extends React.Component {
                     <Link href="/admin/dashboard">
                       <img
                         alt="..."
-                        src={require("assets/img/brand/default-monochrome-black.svg")}
+                        src={require("assets/img/brand/blue.png")}
                       />
                     </Link>
                   </Col>
@@ -97,37 +97,37 @@ class AdminNavbar extends React.Component {
               </div>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <Link href="/sponsors">
-                    <NavLink href="/sponsors">
-                      <span className="nav-link-inner--text">Sponsors</span>
+                  <Link href="/admin/dashboard">
+                    <NavLink href="#pablo">
+                      <span className="nav-link-inner--text">Dashboard</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/agenda">
-                    <NavLink href="/agenda">
-                      <span className="nav-link-inner--text">Agenda</span>
-                    </NavLink>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/speakers">
-                    <NavLink href="/speakers">
-                      <span className="nav-link-inner--text">Speakers</span>
-                    </NavLink>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/coc">
-                    <NavLink href="/coc">
-                      <span className="nav-link-inner--text">Code of Conduct</span>
+                  <Link href="/auth/pricing">
+                    <NavLink href="#pablo">
+                      <span className="nav-link-inner--text">Pricing</span>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/auth/login">
-                    <NavLink href="/auth/login">
+                    <NavLink href="#pablo">
                       <span className="nav-link-inner--text">Login</span>
+                    </NavLink>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/auth/register">
+                    <NavLink href="#pablo">
+                      <span className="nav-link-inner--text">Register</span>
+                    </NavLink>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/auth/lock">
+                    <NavLink href="#pablo">
+                      <span className="nav-link-inner--text">Lock</span>
                     </NavLink>
                   </Link>
                 </NavItem>

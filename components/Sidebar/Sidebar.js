@@ -159,8 +159,8 @@ class Sidebar extends React.Component {
                   <span className="sidenav-normal"> {prop.name} </span>
                 </>
               ) : (
-                    prop.name
-                  )}
+                prop.name
+              )}
             </NavLink>
           </Link>
         </NavItem>
@@ -180,8 +180,6 @@ class Sidebar extends React.Component {
                     alt={logo.imgAlt}
                     className="navbar-brand-img"
                     src={logo.imgSrc}
-                    width="300"
-                    height="53"
                   />
                 </NavbarBrand>
               </span>
@@ -271,11 +269,11 @@ class Sidebar extends React.Component {
         onMouseLeave={this.onMouseLeaveSidenav}
       >
         {this.state.navigatorPlatform &&
-          this.state.navigatorPlatform.indexOf("Win") > -1 ? (
-            <PerfectScrollbar>{scrollBarInner}</PerfectScrollbar>
-          ) : (
-            scrollBarInner
-          )}
+        this.state.navigatorPlatform.indexOf("Win") > -1 ? (
+          <PerfectScrollbar>{scrollBarInner}</PerfectScrollbar>
+        ) : (
+          scrollBarInner
+        )}
       </Navbar>
     );
   }
@@ -283,7 +281,7 @@ class Sidebar extends React.Component {
 
 Sidebar.defaultProps = {
   routes: [{}],
-  toggleSidenav: () => { },
+  toggleSidenav: () => {},
   sidenavOpen: false,
   rtlActive: false,
 };

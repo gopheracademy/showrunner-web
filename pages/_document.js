@@ -1,10 +1,10 @@
 import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
@@ -28,7 +28,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </Html>
+      </html>
     );
   }
 }

@@ -35,15 +35,15 @@ import {
   Col,
 } from "reactstrap";
 // layout for this page
-import Admin from "layouts/Admin.js";
+import RTL from "layouts/RTL.js";
 // core components
-import ProfileHeader from "components/Headers/ProfileHeader.js";
+import RTLProfileHeader from "components/Headers/RTLProfileHeader.js";
 
-class Profile extends React.Component {
+class RTLSupport extends React.Component {
   render() {
     return (
       <>
-        <ProfileHeader />
+        <RTLProfileHeader />
         <Container className="mt--6" fluid>
           <Row>
             <Col className="order-xl-2" xl="4">
@@ -75,7 +75,7 @@ class Profile extends React.Component {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      Connect
+                      الاتصال
                     </Button>
                     <Button
                       className="float-right"
@@ -84,7 +84,7 @@ class Profile extends React.Component {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      Message
+                      رسالة
                     </Button>
                   </div>
                 </CardHeader>
@@ -94,15 +94,15 @@ class Profile extends React.Component {
                       <div className="card-profile-stats d-flex justify-content-center">
                         <div>
                           <span className="heading">22</span>
-                          <span className="description">Friends</span>
+                          <span className="description">اصحاب</span>
                         </div>
                         <div>
                           <span className="heading">10</span>
-                          <span className="description">Photos</span>
+                          <span className="description">الصور</span>
                         </div>
                         <div>
                           <span className="heading">89</span>
-                          <span className="description">Comments</span>
+                          <span className="description">تعليقات</span>
                         </div>
                       </div>
                     </div>
@@ -130,7 +130,7 @@ class Profile extends React.Component {
 
               <Card>
                 <CardHeader>
-                  <h5 className="h3 mb-0">Progress track</h5>
+                  <h5 className="h3 mb-0">مسار التقدم</h5>
                 </CardHeader>
 
                 <CardBody>
@@ -275,7 +275,7 @@ class Profile extends React.Component {
                             className="text-uppercase text-muted mb-0 text-white"
                             tag="h5"
                           >
-                            Total traffic
+                            إجمالي حركة المرور
                           </CardTitle>
                           <span className="h2 font-weight-bold mb-0 text-white">
                             350,897
@@ -288,12 +288,12 @@ class Profile extends React.Component {
                         </Col>
                       </Row>
                       <p className="mt-3 mb-0 text-sm">
-                        <span className="text-white mr-2">
-                          <i className="fa fa-arrow-up" />
+                        <span className="text-white ml-2">
+                          <i className="fa fa-arrow-up ml-2" />
                           3.48%
                         </span>
                         <span className="text-nowrap text-light">
-                          Since last month
+                          منذ اخر شهر
                         </span>
                       </p>
                     </CardBody>
@@ -305,7 +305,7 @@ class Profile extends React.Component {
                       <Row>
                         <div className="col">
                           <CardTitle className="text-uppercase text-muted mb-0 text-white">
-                            Performance
+                            أداء
                           </CardTitle>
                           <span className="h2 font-weight-bold mb-0 text-white">
                             49,65%
@@ -318,12 +318,12 @@ class Profile extends React.Component {
                         </Col>
                       </Row>
                       <p className="mt-3 mb-0 text-sm">
-                        <span className="text-white mr-2">
-                          <i className="fa fa-arrow-up" />
+                        <span className="text-white ml-2">
+                          <i className="fa fa-arrow-up ml-2" />
                           3.48%
                         </span>
                         <span className="text-nowrap text-light">
-                          Since last month
+                          منذ اخر شه
                         </span>
                       </p>
                     </CardBody>
@@ -333,17 +333,17 @@ class Profile extends React.Component {
               <Card>
                 <CardHeader>
                   <Row className="align-items-center">
-                    <Col xs="8">
-                      <h3 className="mb-0">Edit profile</h3>
+                    <Col xs="8" className="text-right">
+                      <h3 className="mb-0">تعديل الملف الشخصي</h3>
                     </Col>
-                    <Col className="text-right" xs="4">
+                    <Col className="text-left" xs="4">
                       <Button
                         color="primary"
                         href="#pablo"
                         onClick={(e) => e.preventDefault()}
                         size="sm"
                       >
-                        Settings
+                        الإعدادات
                       </Button>
                     </Col>
                   </Row>
@@ -351,7 +351,7 @@ class Profile extends React.Component {
                 <CardBody>
                   <Form>
                     <h6 className="heading-small text-muted mb-4">
-                      User information
+                      معلومات المستخدم
                     </h6>
                     <div className="pl-lg-4">
                       <Row>
@@ -361,10 +361,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-username"
                             >
-                              Username
+                              اسم المستخدم
                             </label>
                             <Input
-                              defaultValue="lucky.jesse"
+                              defaultValue="اسم المستخدم"
                               id="input-username"
                               placeholder="Username"
                               type="text"
@@ -377,7 +377,7 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-email"
                             >
-                              Email address
+                              عنوان البريد الإلكتروني
                             </label>
                             <Input
                               id="input-email"
@@ -394,10 +394,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-first-name"
                             >
-                              First name
+                              الاسم
                             </label>
                             <Input
-                              defaultValue="Lucky"
+                              defaultValue="الاسم"
                               id="input-first-name"
                               placeholder="First name"
                               type="text"
@@ -410,10 +410,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-last-name"
                             >
-                              Last name
+                              الكنية
                             </label>
                             <Input
-                              defaultValue="Jesse"
+                              defaultValue="الكنية"
                               id="input-last-name"
                               placeholder="Last name"
                               type="text"
@@ -425,7 +425,7 @@ class Profile extends React.Component {
                     <hr className="my-4" />
 
                     <h6 className="heading-small text-muted mb-4">
-                      Contact information
+                      معلومات الاتصال
                     </h6>
                     <div className="pl-lg-4">
                       <Row>
@@ -435,10 +435,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-address"
                             >
-                              Address
+                              عنوان
                             </label>
                             <Input
-                              defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                              defaultValue="عنوان"
                               id="input-address"
                               placeholder="Home Address"
                               type="text"
@@ -453,10 +453,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-city"
                             >
-                              City
+                              مدينة
                             </label>
                             <Input
-                              defaultValue="New York"
+                              defaultValue="مدينة"
                               id="input-city"
                               placeholder="City"
                               type="text"
@@ -469,10 +469,10 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-country"
                             >
-                              Country
+                              بلد
                             </label>
                             <Input
-                              defaultValue="United States"
+                              defaultValue="بلد"
                               id="input-country"
                               placeholder="Country"
                               type="text"
@@ -485,11 +485,11 @@ class Profile extends React.Component {
                               className="form-control-label"
                               htmlFor="input-country"
                             >
-                              Postal code
+                              الكود
                             </label>
                             <Input
                               id="input-postal-code"
-                              placeholder="Postal code"
+                              placeholder="الكود"
                               type="number"
                             />
                           </FormGroup>
@@ -498,15 +498,15 @@ class Profile extends React.Component {
                     </div>
                     <hr className="my-4" />
 
-                    <h6 className="heading-small text-muted mb-4">About me</h6>
+                    <h6 className="heading-small text-muted mb-4">عني</h6>
                     <div className="pl-lg-4">
                       <FormGroup>
-                        <label className="form-control-label">About Me</label>
+                        <label className="form-control-label">عني</label>
                         <Input
-                          placeholder="A few words about you ..."
+                          placeholder="الجميلة."
                           rows="4"
                           type="textarea"
-                          defaultValue="A beautiful premium dashboard for Bootstrap 4."
+                          defaultValue="الجميلة."
                         />
                       </FormGroup>
                     </div>
@@ -521,6 +521,6 @@ class Profile extends React.Component {
   }
 }
 
-Profile.layout = Admin;
+RTLSupport.layout = RTL;
 
-export default Profile;
+export default RTLSupport;

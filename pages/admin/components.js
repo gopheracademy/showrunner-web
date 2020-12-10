@@ -26,13 +26,9 @@ import Select2 from "react-select2-wrapper";
 // plugin that creates slider
 import Slider from "nouislider";
 // react plugin that creates text editor
-//import ReactQuill from "react-quill";
-const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
-
+import ReactQuill from "react-quill";
 // javascript plugin that creates nice dropzones for files
-//import Dropzone from "dropzone";
-
-const Dropzone = typeof window === 'object' ? require('dropzone') : () => false;
+import Dropzone from "dropzone";
 // reactstrap components
 import {
   Button,
