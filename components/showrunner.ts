@@ -254,11 +254,7 @@ class BaseClient {
 		if (token !== undefined) {
 			this.headers["Authorization"] = "Bearer " + token
 		}
-		if (environment === "dev") {
-			this.baseURL = "http://localhost:4060/"
-		} else {
-			this.baseURL = `https://showrunner-46b2.encoreapi.com/${environment}/`
-		}
+			this.baseURL = `https://showrunner-46b2.encoreapi.com/dev/`
     }
 
     public async do<T>(endpoint: string, req?: any): Promise<T> {

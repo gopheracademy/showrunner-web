@@ -33,7 +33,6 @@ import {
 // core components
 
 import CustomLink from "../components/CustomLink";
-import IndexHeader from "../components/Headers/IndexHeader";
 import SponsorList from "../components/SponsorList";
 import Client from "../components/showrunner.ts";
 
@@ -57,7 +56,6 @@ export default function Home({ edata, sponsors }) {
 
   return (
     <Layout user={user} loading={loading}>
-      <IndexHeader />
       {loading && <p>Loading login info...</p>}
 
       {!loading && !user && (

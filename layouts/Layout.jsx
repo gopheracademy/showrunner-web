@@ -6,7 +6,6 @@ import { withRouter } from "next/router";
 import AdminNavbar from "../components/Navbars/IndexNavbar.js";
 import AuthFooter from "../components/Footers/AuthFooter.js";
 
-import IndexHeader from "../components/Headers/IndexHeader.js";
 import { UserProvider } from "../lib/user";
 
 const Layout = ({ user, loading = false, children }) => (
