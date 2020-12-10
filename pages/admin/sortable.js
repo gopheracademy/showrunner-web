@@ -16,7 +16,7 @@
 */
 import React from "react";
 // javascript plugin that creates a sortable object from a dom object
-import List from "list.js";
+//import List from "list.js";
 // reactstrap components
 import {
   Badge,
@@ -44,18 +44,19 @@ import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 class Sortable extends React.Component {
   componentDidMount() {
-    new List(this.refs["first-list"], {
-      valueNames: ["name", "budget", "status", "completion"],
-      listClass: "list",
-    });
-    new List(this.refs["second-list"], {
-      valueNames: ["name", "budget", "status", "completion"],
-      listClass: "list",
-    });
-    new List(this.refs["third-list"], {
-      valueNames: ["name", "budget", "status", "completion"],
-      listClass: "list",
-    });
+    /*   new List(this.refs["first-list"], {
+         valueNames: ["name", "budget", "status", "completion"],
+         listClass: "list",
+       });
+       new List(this.refs["second-list"], {
+         valueNames: ["name", "budget", "status", "completion"],
+         listClass: "list",
+       });
+       new List(this.refs["third-list"], {
+         valueNames: ["name", "budget", "status", "completion"],
+         listClass: "list",
+       });
+       */
   }
   render() {
     return (

@@ -26,9 +26,9 @@ import Select2 from "react-select2-wrapper";
 // plugin that creates slider
 import Slider from "nouislider";
 // react plugin that creates text editor
-import ReactQuill from "react-quill";
+//import ReactQuill from "react-quill";
 // javascript plugin that creates nice dropzones for files
-import Dropzone from "dropzone";
+//import Dropzone from "dropzone";
 // reactstrap components
 import {
   Button,
@@ -52,7 +52,7 @@ import Admin from "layouts/Admin.js";
 // core components
 import SimpleHeader from "components/Headers/SimpleHeader.js";
 
-Dropzone.autoDiscover = false;
+//nDropzone.autoDiscover = false;
 
 class Components extends React.Component {
   state = {
@@ -95,32 +95,32 @@ class Components extends React.Component {
     // it is just to make the HTML DOM a bit better, and keep it light
     let currentSingleFile = undefined;
     // single dropzone file - accepts only images
-    new Dropzone(document.getElementById("dropzone-single"), {
-      url: "/",
-      thumbnailWidth: null,
-      thumbnailHeight: null,
-      previewsContainer: document.getElementsByClassName(
-        "dz-preview-single"
-      )[0],
-      previewTemplate: document.getElementsByClassName("dz-preview-single")[0]
-        .innerHTML,
-      maxFiles: 1,
-      acceptedFiles: "image/*",
-      init: function () {
-        this.on("addedfile", function (file) {
-          if (currentSingleFile) {
-            this.removeFile(currentSingleFile);
-          }
-          currentSingleFile = file;
-        });
-      },
-    });
+    /* new Dropzone(document.getElementById("dropzone-single"), {
+       url: "/",
+       thumbnailWidth: null,
+       thumbnailHeight: null,
+       previewsContainer: document.getElementsByClassName(
+         "dz-preview-single"
+       )[0],
+       previewTemplate: document.getElementsByClassName("dz-preview-single")[0]
+         .innerHTML,
+       maxFiles: 1,
+       acceptedFiles: "image/*",
+       init: function () {
+         this.on("addedfile", function (file) {
+           if (currentSingleFile) {
+             this.removeFile(currentSingleFile);
+           }
+           currentSingleFile = file;
+         });
+       },
+     });*/
     document.getElementsByClassName("dz-preview-single")[0].innerHTML = "";
     // this variable is to delete the previous image from the dropzone state
     // it is just to make the HTML DOM a bit better, and keep it light
     let currentMultipleFile = undefined;
     // multiple dropzone file - accepts any type of file
-    new Dropzone(document.getElementById("dropzone-multiple"), {
+    /*new Dropzone(document.getElementById("dropzone-multiple"), {
       url: "https://",
       thumbnailWidth: null,
       thumbnailHeight: null,
@@ -139,6 +139,7 @@ class Components extends React.Component {
         });
       },
     });
+    */
     document.getElementsByClassName("dz-preview-multiple")[0].innerHTML = "";
   }
   handleTagsinput = (tagsinput) => {
@@ -505,25 +506,6 @@ class Components extends React.Component {
                       <div
                         data-quill-placeholder="Quill WYSIWYG"
                         data-toggle="quill"
-                      />
-                      <ReactQuill
-                        value={this.state.reactQuillText}
-                        onChange={this.handleReactQuillChange}
-                        theme="snow"
-                        modules={{
-                          toolbar: [
-                            ["bold", "italic"],
-                            ["link", "blockquote", "code", "image"],
-                            [
-                              {
-                                list: "ordered",
-                              },
-                              {
-                                list: "bullet",
-                              },
-                            ],
-                          ],
-                        }}
                       />
                     </Form>
                   </CardBody>
