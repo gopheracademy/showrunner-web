@@ -32,7 +32,6 @@ import {
 } from "reactstrap";
 // core components
 import IndexNavbar from "../../components/Navbars/IndexNavbar";
-import IndexHeader from "../../components/Headers/IndexHeader";
 import AuthFooter from "../../components/Footers/AuthFooter";
 
 import CustomLink from '../../components/CustomLink'
@@ -62,7 +61,6 @@ class Index extends React.Component {
       <>
         <IndexNavbar />
         <div className="main-content">
-          <IndexHeader />
         </div>
         <AuthFooter />
       </>
